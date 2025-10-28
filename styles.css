@@ -48,6 +48,14 @@ body {
     color: #b856f9;
 }
 
+.master-volume-wrapper {
+    max-width: 300px;
+}
+
+#rangeValue {
+    color: #ccc;
+}
+
 .sound-control {
     background-color: #1e1e1e;
     border: 2px solid #333;
