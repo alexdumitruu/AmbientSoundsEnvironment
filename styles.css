@@ -97,3 +97,13 @@ body {
 .sound-control.active .sound-volume {
     display: block;
 }
+
+#ambient-canvas {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw; 
+    height: 100vh; 
+    z-index: -1;  
+    background-color: #191818; 
+}
