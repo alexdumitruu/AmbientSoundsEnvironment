@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     let lightningOpacity = 0;
+    let waveOffset = 0;
 
     function drawRain() {
         ctx.strokeStyle = 'rgba(174, 194, 224, 0.5)';
@@ -149,6 +150,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function drawWaves() {
+        const waveColors = ['rgba(50, 100, 200, 0.4)', 'rgba(40, 120, 220, 0.3)', 'rgba(30, 140, 240, 0.2)'];
+        const frequencies = [0.01, 0.015, 0.008];
+        const amplitudes = [30, 25, 35];
+        const yOffsets = [canvas.height * 0.8, canvas.height * 0.82, canvas.height * 0.84];
+
+        for (let i = 0; i < waveColors.length; i++) {
+            ctx.fillStyle = waveColors[i]; 
+            ctx.beginPath();
+
+            ctx.moveTo(0, canvas.height);
+
+            let startY = yOffsets[i] + Math.sin(waveOffset + i) * amplitudes[i];
+            ctx.lineTo(0, startY);
+
+            for (let x = 1; x < canvas.width; x++) {
+                let y = yOffsets[i] + Math.sin(x * frequencies[i] + waveOffset + i * 2) * amplitudes[i];
+                ctx.lineTo(x, y);
+            }
+            ctx.lineTo(canvas.width, canvas.height);
+            ctx.closePath();
+            ctx.fill(); 
+        }
+
+        waveOffset += 0.02; //the waves move
+    }
+
 
     function animate() {
         requestAnimationFrame(animate);
@@ -158,6 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const fireActive = document.querySelector('[data-sound="fire"]').classList.contains('active');
         const thunderActive = document.querySelector('[data-sound="thunder"]').classList.contains('active');
         const nightActive = document.querySelector('[data-sound="night"]').classList.contains('active');
+        const wavesActive = document.querySelector('[data-sound="waves"]').classList.contains('active');
 
         if (rainActive) {
             drawRain();
@@ -171,6 +200,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (nightActive) {
             drawNight();
+        }
+        if (wavesActive) {
+            drawWaves();
         }
     }
 
