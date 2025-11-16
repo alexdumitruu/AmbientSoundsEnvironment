@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function createFireParticle() {
     const size = Math.random() * 5 + 2;
     return {
-        x: (canvas.width / 2) + (Math.random() * 60 - 30),
+        x: Math.random() * canvas.width,
         y: canvas.height - Math.random() * 20,
         size: size,
         speedY: Math.random() * 2 + 1,
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         fireParticles.forEach(p => {
             ctx.beginPath();
-            ctx.fillStyle = 'red';
+            ctx.fillStyle = `hsla(${p.hue}, 100%, 50%, ${p.opacity})`;
             ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
             ctx.fill();
 

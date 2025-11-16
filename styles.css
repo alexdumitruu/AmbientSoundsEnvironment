@@ -1,10 +1,8 @@
 html {
-    background-color: #191818;
     min-height: 100%;
 }
 
 body {
-    background-color: #191818;
     color: #e0e0e0;
     min-height: 100vh;
 }
@@ -12,7 +10,6 @@ body {
 .wrap-container {
     width: 100vw;
     height: 100vh;
-    background-color: #191818;
 }
 
 .container {
