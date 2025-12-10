@@ -105,5 +105,6 @@ This project is created for educational purposes as part of the Multimedia cours
 
 ## Author
 
-Alexandru David Dumitru and Ali Farajollah Esfahanny
+Alexandru David Dumitru and Ali Farajollah Esfahanny.
+
 Created with ❤️ for an immersive multimedia experience.
