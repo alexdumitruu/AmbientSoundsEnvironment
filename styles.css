@@ -122,3 +122,35 @@ body {
 .sound-control.active .visual-effect-indicator {
     display: none;
 }
+
+#color-adapt-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    background-color: #1e1e1e; /* Default dark background */
+    color: #888; /* Default icon color */
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.5s ease; /* Smooth color transition */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px; /* Spacing from play button */
+    
+    /* Remove default button junk */
+    outline: none;
+    padding: 0;
+}
+
+#color-adapt-btn:hover {
+    background-color: #333;
+    color: #fff;
+    transform: scale(1.1); /* Slight grow effect */
+}
+
+/* When active (Class added by JS) */
+#color-adapt-btn.active {
+    border-color: white;
+    transform: scale(1.1);
+}
