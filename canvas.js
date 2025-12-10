@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             adaptBtn.classList.toggle('active');
             
             if (!isAdaptingColor) {
-                // RESET VISUALS when turned off
+               
                 adaptBtn.style.backgroundColor = '#1e1e1e';
                 adaptBtn.style.boxShadow = 'none';
                 adaptBtn.style.color = '#888';
@@ -69,21 +69,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const hsl = rgbToHsl(r, g, b);
         
-        // Smooth transition logic
+        
         ambientColor.h += (hsl.h - ambientColor.h) * 0.05;
         ambientColor.s += (Math.max(hsl.s * 100, 60) - ambientColor.s) * 0.05;
         ambientColor.l += (60 - ambientColor.l) * 0.05;
 
         // --- UPDATE BUTTON VISUALS ---
         if (adaptBtn) {
-            // We force high saturation/lightness for the BUTTON so it looks like a distinct palette color
-            // regardless of how dark the room actually is.
             const btnColor = `hsl(${ambientColor.h}, 90%, 60%)`;
             const btnGlow = `0 0 20px hsl(${ambientColor.h}, 90%, 60%)`;
 
             adaptBtn.style.backgroundColor = btnColor;
             adaptBtn.style.boxShadow = btnGlow;
-            adaptBtn.style.color = '#fff'; // Icon always white
+            adaptBtn.style.color = '#fff'; 
             adaptBtn.style.border = '2px solid white';
         }
     }
@@ -106,7 +104,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         return { h: h * 360, s: s, l: l };
     }
 
-    // ----------------------------------------
+    
 
     function resizeCanvas() {
         canvas.width = window.innerWidth;

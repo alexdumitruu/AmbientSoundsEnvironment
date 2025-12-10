@@ -128,17 +128,17 @@ body {
     height: 60px;
     border-radius: 50%;
     border: 2px solid #333;
-    background-color: #1e1e1e; /* Default dark background */
-    color: #888; /* Default icon color */
+    background-color: #1e1e1e;
+    color: #888; 
     font-size: 1.5rem;
     cursor: pointer;
-    transition: all 0.5s ease; /* Smooth color transition */
+    transition: all 0.5s ease; 
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 15px; /* Spacing from play button */
+    margin-left: 15px; 
     
-    /* Remove default button junk */
+    
     outline: none;
     padding: 0;
 }
@@ -146,10 +146,10 @@ body {
 #color-adapt-btn:hover {
     background-color: #333;
     color: #fff;
-    transform: scale(1.1); /* Slight grow effect */
+    transform: scale(1.1); 
 }
 
-/* When active (Class added by JS) */
+
 #color-adapt-btn.active {
     border-color: white;
     transform: scale(1.1);
