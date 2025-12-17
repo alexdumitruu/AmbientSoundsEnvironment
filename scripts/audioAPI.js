@@ -90,12 +90,11 @@ document.addEventListener("DOMContentLoaded", () => {
       );
       controlElement.classList.add("active");
 
-      // Only play if global playing is enabled
-      if (isGlobalPlaying) {
-        instance.audio.play().catch((err) => {
-          console.warn(`Could not play ${soundName}:`, err);
-        });
-      }
+      // Auto-enable global playing and start this sound immediately
+      isGlobalPlaying = true;
+      instance.audio.play().catch((err) => {
+        console.warn(`Could not play ${soundName}:`, err);
+      });
     }
 
     // Update play/pause button visibility based on whether any sounds are active
